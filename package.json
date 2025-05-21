@@ -1,0 +1,25 @@
+{
+  "name": "electron-deploy-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "wait-on http://localhost:5173/ && echo 'Server started' && electron .",
+    "react-start": "cd src/react-project/ && npm run dev",
+    "vue-start": "cd src/vue-project/ && npm run dev",
+    "angular-start": "cd src/angular-project/ && npm run start",
+    "dev": "concurrently -k \"npm run vue-start\" \"npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^35.1.2",
+    "electron-builder": "^26.0.12",
+    "wait-on": "^8.0.3"
+  }
+}
