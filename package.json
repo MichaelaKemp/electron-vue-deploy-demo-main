@@ -1,25 +1,44 @@
 {
   "name": "electron-deploy-demo",
   "version": "1.0.0",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MichaelaKemp/electron-deploy-demo.git"
+  },
+  "description": "I just wanna be apart of your symphony",
   "main": "src/main.js",
   "scripts": {
-    "start": "wait-on http://localhost:5173/ && echo 'Server started' && electron .",
+    "start": "electron-forge start",
     "react-start": "cd src/react-project/ && npm run dev",
     "vue-start": "cd src/vue-project/ && npm run dev",
     "angular-start": "cd src/angular-project/ && npm run start",
     "dev": "concurrently -k \"npm run vue-start\" \"npm start\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michaela Kemp",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@electron-forge/cli": "^7.8.1",
+    "@electron-forge/maker-deb": "^7.8.1",
+    "@electron-forge/maker-rpm": "^7.8.1",
+    "@electron-forge/maker-squirrel": "^7.8.1",
+    "@electron-forge/maker-zip": "^7.8.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.1",
+    "@electron-forge/plugin-fuses": "^7.8.1",
+    "@electron-forge/publisher-github": "^7.8.1",
+    "@electron/fuses": "^1.8.0",
     "concurrently": "^9.1.2",
     "cross-env": "^7.0.3",
     "electron": "^35.1.2",
-    "electron-builder": "^26.0.12",
     "wait-on": "^8.0.3"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "update-electron-app": "^3.1.1"
   }
 }

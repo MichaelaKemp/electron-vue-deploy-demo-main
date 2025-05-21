@@ -1,10 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const selectedImage = ref('https://picsum.photos/1600/900')
-const MessageTo = ref('3rd-years')
-const Message = ref('May you always create bugs no one else can fix.')
-const MessageFrom = ref('Armand')
+const selectedImage = ref('https://i.imgflip.com/8hf4qw.jpg?a485328')
+const MessageTo = ref('Everyone')
+const Message = ref('I am losing my mind with Daisy UI.')
+const MessageFrom = ref('Michaela')
 
 </script>
 
@@ -15,7 +15,7 @@ const MessageFrom = ref('Armand')
       <h2>
         {{ Message }}
       </h2>
-      <h5>Sincerely,<br/>{{ MessageFrom }}</h5>
+      <h5>That is all,<br/>{{ MessageFrom }}</h5>
     </div>
   </div>
     

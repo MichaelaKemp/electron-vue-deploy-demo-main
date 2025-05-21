@@ -1,3 +1,6 @@
+const { updateElectronApp } = require('update-electron-app');
+updateElectronApp();
+
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
@@ -9,11 +12,11 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-      preload: path.join(__dirname, 'src/preload.js'),
+      preload: path.join(__dirname, 'preload.js')
     }
   });
 
-  mainWindow.loadURL('http://localhost:5173/'); //Display the Vite app
+  mainWindow.loadFile(path.join(__dirname, 'vue-project/dist/index.html'));
 
   mainWindow.on('closed', () => {
     mainWindow = null;
